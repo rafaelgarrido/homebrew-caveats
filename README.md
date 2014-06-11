@@ -1,7 +1,5 @@
-homebrew-caveats
+Formulae Caveats Shortcut for Homebrew Package Manager
 ================
-
-# Formulae Caveats Shortcut for Homebrew Package Manager
 
 ## What is it?
 
