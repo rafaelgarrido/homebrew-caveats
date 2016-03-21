@@ -4,9 +4,9 @@ require 'caveats'
 module Homebrew extend self
   def caveats
     raise FormulaUnspecifiedError if ARGV.named.empty?
-    
-    ARGV.formulae.each do |f|
-      puts_caveats f
+
+    ARGV.named.each do |f|
+      puts_caveats Formulary.factory(f) rescue nil
     end
   end
 
