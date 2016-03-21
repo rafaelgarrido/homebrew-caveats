@@ -5,8 +5,8 @@ Formulae Caveats Shortcut for Homebrew Package Manager
 
 It's an [external command][ec] for [Homebrew][h]. It provides installation caveat descriptions for Homebrew packages.
 
-[ec]: https://github.com/mxcl/homebrew/wiki/External-Commands
-[h]: https://github.com/mxcl/homebrew
+[ec]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md
+[h]: https://github.com/Homebrew/homebrew
 
 ## Usage
 
