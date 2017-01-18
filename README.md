@@ -16,12 +16,28 @@ functions exactly like a sub-command built into Homebrew.)
 
 If you already know the name of a package, and you want to see a bit about it, that's easy:
 
-    $ brew caveats zsh
+    $ brew caveats zsh redis mysql foobarbazxpto42
     ==> zsh: Caveats
     Add the following to your zshrc to access the online help:
         unalias run-help
         autoload run-help
         HELPDIR=/usr/local/share/zsh/helpfiles
+    
+    ==> redis: Caveats
+    To have launchd start redis now and restart at login:
+        brew services start redis
+    Or, if you don't want/need a background service you can just run:
+        redis-server /usr/local/etc/redis.conf
+    
+    ==> mysql: Caveats
+    We've installed your MySQL database without a root password. To secure it run:
+        mysql_secure_installation
+    To connect run:
+        mysql -uroot
+    To have launchd start mysql now and restart at login:
+        brew services start mysql
+    Or, if you don't want/need a background service you can just run:
+        mysql.server start
 
 ## Installation
 
@@ -34,9 +50,9 @@ For the first method, do the following:
 
     brew tap rafaelgarrido/homebrew-caveats && brew install brew-caveats
 
-For the second method clone or download this repository. Then simply put the file `brew-caveats.rb` anywhere in your `$PATH`. For example:
+For the second method clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
 
-    mv brew-caveats.rb ~/bin
+    mv cmd/brew-caveats.rb ~/bin
 
 Leave the name as is if you follow this method. Homebrew knows how to find it.
 
