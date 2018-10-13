@@ -24,8 +24,10 @@ module Cask
       end
 
       def self.caveats(cask)
-        ohai "#{cask}: Caveats", cask.caveats
-        puts
+        unless cask.caveats.empty?
+          ohai "#{cask}: Caveats", cask.caveats
+          puts
+        end
       end
 
     end
