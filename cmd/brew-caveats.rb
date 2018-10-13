@@ -1,3 +1,8 @@
+#:  * `caveats`
+#:  Provides installation caveat descriptions from formulae
+#:
+#:  `brew caveats` <formula1> <formula2> <...>
+
 require 'formula'
 require 'caveats'
 

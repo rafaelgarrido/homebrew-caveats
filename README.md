@@ -3,20 +3,20 @@ Formulae Caveats Shortcut for Homebrew Package Manager
 
 ## What is it?
 
-It's an [external command][ec] for [Homebrew][h]. It provides installation caveat descriptions for Homebrew packages.
+It's an [external command][ec] for [Homebrew][h]. It provides installation caveat descriptions for Homebrew packages and casks.
 
-[ec]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md
-[h]: https://github.com/Homebrew/homebrew
+[ec]: https://github.com/Homebrew/brew/blob/master/docs/External-Commands.md
+[h]: https://github.com/Homebrew/brew
 
 ## Usage
 
-Although the script's name is `brew-caveats.rb`, [Homebrew external
-commands][ec] work in such a way that you invoke it as `brew caveats`. (It
+Although the script's names are `brew-caveats.rb` and `brewcask-caveats.rb`, [Homebrew external
+commands][ec] work in such a way that you invoke them as `brew caveats` and `brew cask caveats`. (It
 functions exactly like a sub-command built into Homebrew.)
 
 If you already know the name of a package, and you want to see a bit about it, that's easy:
 
-    $ brew caveats zsh redis mysql foobarbazxpto42
+    $ brew caveats zsh redis mysql
     ==> zsh: Caveats
     Add the following to your zshrc to access the online help:
         unalias run-help
@@ -39,9 +39,25 @@ If you already know the name of a package, and you want to see a bit about it, t
     Or, if you don't want/need a background service you can just run:
         mysql.server start
 
+This is also valid for casks:
+
+    $ brew cask caveats osxfuse anaconda
+    ==> osxfuse: Caveats
+    To install and/or use osxfuse you may need to enable their kernel extension in
+        System Preferences → Security & Privacy → General
+    For more information refer to vendor documentation or the Apple Technical Note:
+        https://developer.apple.com/library/content/technotes/tn2459/_index.html
+    You must reboot for the installation of osxfuse to take effect.
+    
+    ==> anaconda: Caveats
+    To use anaconda, you may need to add the /usr/local/anaconda3/bin directory to your PATH environment variable, eg (for bash shell):
+        export PATH=/usr/local/anaconda3/bin:"$PATH"
+    Cask anaconda installs files under /usr/local. The presence of such files can cause warnings when running "brew doctor", which is considered to be a bug in Homebrew Cask.
+    
+
 ## Installation
 
-You can install `brew caveats` in two ways.
+You can install `brew caveats` and `brew cask caveats` in two ways.
 
 1. Tap this repository and install via `brew` itself.
 1. Install manually.
@@ -50,10 +66,10 @@ For the first method, do the following:
 
     brew tap rafaelgarrido/homebrew-caveats && brew install brew-caveats
 
-For the second method clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
+For the second method clone or download this repository. Then simply put the files `cmd/brew-caveats.rb` and `cmd/brewcask-caveats.rb` anywhere in your `$PATH`. For example:
 
-    mv cmd/brew-caveats.rb ~/bin
+    mv cmd/*-caveats.rb ~/bin
 
 Leave the name as is if you follow this method. Homebrew knows how to find it.
 
-Once you've installed via either method, you can use the command as described above.
+Once you've installed via either method, you can use the commands as described above.
