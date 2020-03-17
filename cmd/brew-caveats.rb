@@ -3,14 +3,26 @@
 #:
 #:  `brew caveats` <formula1> <formula2> <...>
 
+require "cli/parser"
 require 'formula'
 require 'caveats'
 
 module Homebrew extend self
-  def caveats
-    raise FormulaUnspecifiedError if ARGV.named.empty?
 
-    ARGV.named.each do |f|
+  def caveats_args
+    Homebrew::CLI::Parser.new do
+      usage_banner <<~EOS
+        `caveats` <formulae1> <formulae2> <...>
+        Provides installation caveat descriptions from formulae`.
+      EOS
+    end
+  end
+
+  def caveats
+    caveats_args.parse
+    raise FormulaUnspecifiedError if Homebrew.args.named.empty?
+
+    Homebrew.args.named.each do |f|
       puts_caveats Formulary.factory(f) rescue nil
     end
   end
@@ -18,7 +30,7 @@ module Homebrew extend self
   def puts_caveats f
     c = Caveats.new(f)
     unless c.empty?
-      ohai "#{f.name}: Caveats", c.caveats
+      ohai "#{f.full_name}: Caveats", c.caveats
       puts
     end
   end
