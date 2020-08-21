@@ -3,7 +3,7 @@ require 'formula'
 class BrewCaveats < Formula
   url 'git://github.com/rafaelgarrido/homebrew-caveats.git'
   homepage 'https://github.com/rafaelgarrido/homebrew-caveats'
-  version '0.0.9'
+  version '0.0.10'
 
   skip_clean 'bin'
 

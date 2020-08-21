@@ -23,6 +23,10 @@ module Cask
         "displays caveats about the given Casks"
       end
 
+      def self.description
+        "Provides installation caveat descriptions from formulae"
+      end
+
       def self.caveats(cask)
         unless cask.caveats.empty?
           ohai "#{cask}: Caveats", cask.caveats

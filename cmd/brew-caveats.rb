@@ -19,10 +19,10 @@ module Homebrew extend self
   end
 
   def caveats
-    caveats_args.parse
-    raise FormulaUnspecifiedError if Homebrew.args.named.empty?
+    args = caveats_args.parse
+    raise FormulaUnspecifiedError if args.named.empty?
 
-    Homebrew.args.named.each do |f|
+    args.named.each do |f|
       puts_caveats Formulary.factory(f) rescue nil
     end
   end
