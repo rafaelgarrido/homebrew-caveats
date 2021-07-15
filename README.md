@@ -10,8 +10,8 @@ It's an [external command][ec] for [Homebrew][h]. It provides installation cavea
 
 ## Usage
 
-Although the script's names are `brew-caveats.rb` and `brewcask-caveats.rb`, [Homebrew external
-commands][ec] work in such a way that you invoke them as `brew caveats` and `brew cask caveats`. (It
+Although the script's names is `brew-caveats.rb`, [Homebrew external
+commands][ec] work in such a way that you invoke them as `brew caveats`. (It
 functions exactly like a sub-command built into Homebrew.)
 
 If you already know the name of a package, and you want to see a bit about it, that's easy:
@@ -41,7 +41,7 @@ If you already know the name of a package, and you want to see a bit about it, t
 
 This is also valid for casks:
 
-    $ brew cask caveats osxfuse anaconda
+    $ brew caveats osxfuse anaconda
     ==> osxfuse: Caveats
     To install and/or use osxfuse you may need to enable their kernel extension in
         System Preferences → Security & Privacy → General
@@ -57,7 +57,7 @@ This is also valid for casks:
 
 ## Installation
 
-You can install `brew caveats` and `brew cask caveats` in two ways.
+You can install `brew caveats` in two ways.
 
 1. Tap this repository and install via `brew` itself.
 1. Install manually.
@@ -66,7 +66,7 @@ For the first method, do the following:
 
     brew tap rafaelgarrido/homebrew-caveats && brew install brew-caveats
 
-For the second method clone or download this repository. Then simply put the files `cmd/brew-caveats.rb` and `cmd/brewcask-caveats.rb` anywhere in your `$PATH`. For example:
+For the second method clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
 
     mv cmd/*-caveats.rb ~/bin
 
