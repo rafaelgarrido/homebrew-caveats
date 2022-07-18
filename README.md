@@ -59,14 +59,14 @@ This is also valid for casks:
 
 You can install `brew caveats` in two ways.
 
-1. Tap this repository and install via `brew` itself.
+1. Tap this repository.
 1. Install manually.
 
-For the first method, do the following:
+For the first method, run the following command:
 
-    brew tap rafaelgarrido/homebrew-caveats && brew install brew-caveats
+    brew tap rafaelgarrido/caveats
 
-For the second method clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
+For the second method, clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
 
     mv cmd/*-caveats.rb ~/bin
 
