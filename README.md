@@ -65,6 +65,8 @@ You can install `brew caveats` in two ways.
 For the first method, do the following:
 
     brew tap rafaelgarrido/homebrew-caveats && brew install brew-caveats
+    # or directly via:
+    brew install rafaelgarrido/homebrew-caveats/brew-caveats
 
 For the second method clone or download this repository. Then simply put the file `cmd/brew-caveats.rb` anywhere in your `$PATH`. For example:
 
